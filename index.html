@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/moon.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -21,11 +21,42 @@
 				color: rgb(255, 137, 137);
 				padding: 10px
 			}
+
+			.demo div {}
+
+			.div {width: 100px;} -- это стиль для класса "div" -- <div class="div"> или для <section class="div">
+			.abc {height: 10px; color: blue} -- это стиль для класса "abc" -- <div class="abc"> или для <section class="abc">
+
+			div {color: red} -- это для тега div -- <div class="div"> и для <div class="abc">
+
+			div {}
+
+			#demo-div {
+				width: 300px;
+				height: 200px;
+				background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("https://i.imgur.com/xnh5x47.jpg");
+			}
+
+			#demo-span {
+				background: black;
+				color: white;
+			}
 		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
+				<section>
+					<a href="https://revealjs.com">
+						<img src="Img\Улитка монстр-01.png" alt="Улитка.art logo"
+							style="height: 300px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+					</a>
+					<h3>Hello world It's me SNAILk</h3>
+					<p>
+						<small>Created by <a href="https://safina.re/">Maria Safinart</a> and <a
+								href="https://gnedov.info/">Pavel Gnedov</a></small>
+					</p>
+				</section>
 				<section>Slide 1</section>
 				<section>Slide 2</section>
 				<section>Слайд 3</section>
@@ -49,6 +80,30 @@
 				<section data-background-color="#999999">
 					<h2>🐟</h2>
 				</section>
+				<section data-transition="zoom" data-transition-speed="fast">
+					Slaid 1
+				</section>
+				<section>
+					<section>Veronica 1</section>
+					<section>Veronica 2</section>
+				</section>
+				<section>Slaid 3 С приватными коментариями
+					<aside class="notes">
+						"Тут много личной информации"
+					</aside>
+				</section>
+				<section>
+					<section data-markdown>
+						<textarea data-template> 
+							## Slide 1
+							Здесь есть интересные фишки [link] (https://hakim.se/).
+							--
+							## Slide 2
+							--
+							## Slide 3
+						</textarea>
+					</section>
+				</section>
 				<section data-background-color="#999999">
 					<img src="Img\Слайд-01.png" alt="Слайд-01">
 				</section>
@@ -57,6 +112,30 @@
 						Почему вообще появилась эта тема? Год назад реализовал альтернативное представление для задач в виде kanban доски
 						основанной на API Redmine. Для получения информации для каждой карточки выполнялся запрос данных в формате json.
 					</div>
+				</section>
+				<section class="demo">
+					<div id="demo-div" style="width: 300px; height: 200px; background: linear-gradient(rgba(0, 255, 0, 0.5), rgba(255, 0, 0, 0.5)), url('https://i.imgur.com/xnh5x47.jpg');">
+						<span id="demo-span" style='background-color: red;'>
+							Hello world.
+
+							<!-- Конфликт кавычек - <div style=" ...    url("Img/01.jpg")    ... ">  -->
+
+							<!-- Решение 1        - <div style=' ...    url("Img/01.jpg")    ... '>  -->
+							<!--                               ^                                 ^   -->
+						</span>
+					</div>
+				</section>
+				</section>
+					<!-- <div {
+					width: 300px;
+					height: 200px;
+					background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("https://i.imgur.com/xnh5x47.jpg");
+					}
+					span {
+					background: black;
+					color: white;
+					} -->
+					<!-- <div><span>Hello world.</span></div> -->
 				</section>
 			</div>
 		</div>

@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/moon.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -137,6 +137,162 @@
 					} -->
 					<!-- <div><span>Hello world.</span></div> -->
 				</section>
+				
+				<!-- ЗДЕСЬ НАЧАЛО САМОЙ ПРЕЗЕНТАЦИИ -->
+				
+				<section>
+					<h1>Боль</h1>
+					<ul>
+						<li>Я не знаю чем сейчас занимаюсь</li>
+						<li>Не знаю что делать дальше</li>
+						<li>Не знаю чем занимаются коллеги</li>
+						<li>Нет желания работать с задачами в Redmine</li>
+						<li>Я не знаю что происходит с проектом</li>
+						<li>В уведомлениях email не ясно какие важные, а какие нет</li>
+					</ul>
+					
+					<!--
+						Работа с Redmine доставляет мне множество неудобств: 
+						не знаю чем сейчас занимаюсь, не знаю что делать дальше, не знаю чем 
+						занимаются коллеги, нет желания работать с задачами, не знаю что 
+						происходит с проектом. Окей, на самом деле конечно же можно разобраться 
+						в задачах - только часто чтобы увидеть картину в целом нужно смотреть 
+						одновременно через множество фильтров, в email не ясно какое письмо важное, 
+						а какое нет.
+					-->
+				</section>
+				
+				<section>
+					<h1>Почему этот доклад?</h1>
+					
+					<!--
+						Почему вообще появилась эта тема? Год назад реализовал альтернативное 
+						представление для задач в виде kanban доски основанной на API Redmine. 
+						Для получения информации для каждой карточки выполнялся запрос данных 
+						в формате json. Разрабатывал конечно же на тестовых данных с несколькими 
+						задачами. Всё шло хорошо по началу. А в реальности это всё оказалась 
+						плохой идеей, потому что открытие доски для текущей версии нашего проекта 
+						(а это обычно больше сотни задач) выливалось в одновременную загрузку 
+						большого объёма данных - как будто в браузере открываешь сотню задач во 
+						вкладках одновременно. Что происходило с Redmine? - Он становился 
+						недоступен для всех сотрудников на некоторое время. Простите.
+
+						Конечно же для решения проблемы был использован кеш? Но что он решал? 
+						Он кешировал данные на какое-то время. А что дальше? Сколько этим данным 
+						можно доверять? 5 минут, 10 минут или ещё больше? 
+						А потом их снова нужно загружать.
+					-->
+				</section>
+				
+				<section>
+					<h1>Что если?</h1>
+					
+					<!--
+						Что если Redmine мог как-нибудь сообщать что задача изменилась? Вот тогда
+						бы, я бы мог не беспокоиться что мой кэш содержит устаревшие данные. 
+						А ведь Redmine умеет это делать! Он умеет делать рассылку по электронной 
+						почте о каждом изменении в задаче.
+					-->
+				</section>
+				
+				<section>
+					<section>
+						<h1>Redmine Issue Event Emitter</h1>
+						
+						<!--
+							Итак основная идея - загрузка полного json о задаче при получении
+							уведомления по email. Реализовал это во вспомогательном сервисе - Redmine
+							Issue Event Emitter. Это абстрактный сервис не привязанный жёстко к какой-либо версии Redmine, он стоит сбоку, не
+							вмешивается в сам Redmine, но обращается к api при получении новых уведомлений по email.
+						-->
+						
+						<img src="Img/Схема-event-emitter-упрощённая.png"/>
+					</section>
+					<section>
+						<h2>Конфиг для docker-compose</h2>
+						
+						<p>docker-compose.yml</p>
+						
+						<pre><code data-trim data-noescape data-line-numbers="|5|8|10|">
+							version: '3.1'
+
+							services:
+								redmine-event-emitter:
+									image: ghcr.io/pavel-g/redmine-issue-event-emitter:latest
+									restart: always
+									ports:
+									  - 8381:3000
+									volumes:
+									  - ./redmine-event-emitter-configs:/app/configs
+						</code></pre>
+						
+						<!--
+							Сервис написан на TypeScript и фреймворке NestJS и соответственно выполняется в среде NodeJS. Чтобы было проще им
+							воспользоваться есть собранный контейнер для Docker.
+
+							Я бы рекомендовал его запускать с помощью docker-compose, чтобы была возможность добавить любую СУБД и ещё
+							какие-нибудь вспомогательные сервисы. Об этом расскажу далее, а пока ещё несколько слов о настройке.
+						-->
+					</section>
+					<section>
+						<!--
+							Чтобы сервис работал верно, соответственно нужно указывать реквизиты доступа к электронной почте. Для проекта ECCM
+							использую свою личную почту с переносом всех уведомлений от Redmine в отдельную папку. Redmine Issue Event Emitter
+							подключается по imap как обычный почтовый клиент Mozilla Thunderbird и проверяет новые письма. При получении с
+							помощью регулярного выражения определяет номер задачи, кладёт его в собственную очередь для дальнейшей загрузки из
+							api redmine.
+						-->
+						
+						<h2>Конфигурационный файл main-config.jsonc</h2>
+						
+						<pre><code data-trim data-noescape data-line-numbers="2-17|3|4-14|15|16|18-21|22|23-29">
+							{
+								"mailListener": {
+									"issueNumberParser": "\\b(?<=#)\\d+\\b",
+									"imapSimpleConfig": {
+										"imap": {
+											"user": "email_login",
+											"password": "email_password",
+											"host": "mail.example.org",
+											"port": 143,
+											// tls: true,
+											"autotls": "always",
+											"authTimeout": 5000
+										}
+									},
+									"updateInterval": 180000, // 3 min
+									"boxName": "INBOX.Redmine"
+								},
+								"issueChangesQueue": {
+									"updateInterval": 15000, // 15 sec
+									"itemsLimit": 3
+								},
+								"redmineUrlPrefix": "http://redmine.example.org",
+								"webhooks": [
+									{
+										"url": "https://n8n.example.org/webhook/<hook_uuid>",
+										"apiKeyName": "",
+										"apiKeyValue": ""
+									}
+								]
+							}
+						</code></pre>
+					</section>
+					<section>
+						<h2>Получившаяся структура папок</h2>
+						
+						<img src="Img/Структура_папок.png"/>
+					</section>
+					<section>
+						<h2>Запуск event-emitter</h2>
+						
+						<pre><code data-trim data-noescape>
+							docker-compose up -d
+						</code></pre>
+					</section>
+				</section>
+				
+				<section></section>
 			</div>
 		</div>
 

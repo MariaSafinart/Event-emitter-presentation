@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+/* * {
+    padding: 0px;
+    margin: 0px;
+} */
+
+body {
+    /* background-color: #f1f1f1; */
+    background-color: #F7F7F7;
+    color: #EA8D07;
+
+    font-size: 16px;
+    font-weight: normal;
+    font-family: 'Roboto', sans-serif;
+
+    font: normal 16px 'Roboto', sans-serif; 
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+}
+
+a {
+    color: #115071;
+    text-decoration: none;
+
+}
+
+a:hover{
+    text-decoration: underline; /* Добавляем подчёркивание при наведении */
+
+}
+
+a:active {
+    color: hotpink;
+}
+
+/* a:visited {
+    color: grey;
+
+} */
+
+
+.avatar { 
+    width: 250px;
+    border-radius: 0%;
+    /* box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.151); */
+}
+.info {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 700px) {
+    .info {
+        text-align: center;
+        display: block;
+    }
+}
+
+.info-text {
+    margin-left: 40px;
+}
+
+.info-text h4 {
+    margin-bottom: 10px;
+}
+
+.info p {
+    color: #115071;
+    margin: 0;
+    padding: 0.79vw 0 0 0;
+    /* font-style: italic; */
+    /* font-weight: bold; */
+    text-decoration: none;
+    /* text-transform: capitalize; */
+    /* letter-spacing: 5px; */
+     /* word-spacing: 42px;  */
+}
+.contener {
+    max-width: 75%;
+    margin: auto;
+    padding-top: 30px;
+
+}
+/* Box Model */
+/* .social {
+    background: darkorange;
+    /* padding: 15px; */
+    /* padding: 15px 40px; */
+    /* padding: 15px 20px 25px 30px;  */
+    /* padding-top: 15px;
+    padding-right: 20px;
+    padding-bottom: 25px;
+    padding-left: 30px; */
+    /* border: 5px solid rgb(255, 196, 68);
+    border-bottom-style:dotted;
+    border-top-width: 15px;
+    border-right-color: darkolivegreen; */
+    /* border-right: darkviolet; */
+    /* margin: 20px; */ */
+/* } */
+
+/* .box-model > div {
+    float: left; Выравнивание по левому краю */
+    /* background: dimgray; Цвет фона */
+    /* height: 200px; */
+    /* border: 4px solid goldenrod; Параметры рамки */
+    /* width: 250px; Ширина блока */
+    /* padding: 7px; Поля вокруг текста */
+    /* overflow: hidden; Добавляем полосы прокрутки */
+    /* overflow-x: auto; Добавляем полосы прокрутки по горизонтали */
+    /* overflow-y: scroll; Добавляем полосы прокрутки по вертикали */
+/* } */
+
+/* .bg-orange {
+    background: #91854b;
+} */
+
+.bg-white {
+    /* background: #9c9c46; */
+}
+
+.bg-white {
+    background: #FDFDD9;
+
+}
+
+.bgl {
+    /* background: #fff9dc; */
+    background: red;
+}
+.bg-lemonchiffon {
+    /* background: #fff9dc; */
+    background: #fff9dc;
+}
+.bg-green {
+    background: #e5ffe7;
+
+}
+.bg-red {
+    background: #ffe5e5;
+}
+.bg-azure {
+    background: #f0ffff;
+}
+.bg-abc {
+    background: #fff9dc;
+}
+
+.card {
+    padding: 15px 20px;
+    /* background: indianred; */
+    margin-bottom: 20px;
+    border-radius: 20px ;
+    box-shadow: 0 4px 7px -5px #046683e3, 0 4px 7px -5px #046683e3;
+}
+.card h2 {
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #115071;
+}
+
+.list {
+    padding: 0px 20px;
+    /* list-style: none; - убрать список */
+}
+.list li {
+    color: #86898f ;
+    margin-bottom: 10px;
+    /* border-bottom: 1px solid grey; */
+}
+
+.table {
+    width: 100%;
+}
+
+.table td {
+    padding-bottom: 10px; /* Внутренний отступ */
+    color: #115071;
+}
+
+.table td:nth-child(2), 
+.table td:nth-child(3), 
+.table td:nth-child(4) {
+    color: #86898f;  
+}
+ /* Псевдо селектор для выбора определённых элементов какой по порядку элемент хочем изменить 1:14 в видео про CSS*/
+
+/* .table tr:nth-child(odd) {
+    background: red;
+} */
+
+#table-skills td {
+    text-align: center;
+    vertical-align: top;
+    color: #115071;
+}
+
+
+
+
+
+.link-list {
+    list-style-image: url(Img/огонь\ для\ маркеров-01.png);
+    list-style-position: outside;
+}
+
+.link-list li {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.contact h2{
+    text-align: center; 
+    /* Текст расположить по центру (можно слева или с права) */
+}
+
+.from-group label{
+    display: block;
+    /* Каждый из блоков должен находится на своей собственной строчки */
+    font-size: 14px;
+    color: #86898f;
+}
+
+.from-group input,
+.from-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    /* Нет обводки поля */
+    background: transparent; 
+    /* Прозрачный цвет */
+    border-bottom: 1px solid #ccc;
+    color: black;
+    padding: 15px 0px 10px;
+    outline: none;
+    /* Граница блока при наведение на него курсора 1:25 в видео по CSS */
+    font-family: inherit;
+}
+
+.row {
+    display: flex;
+    /* Многоцелевое свойство, которое определяет, как элемент должен быть показан в документе. */
+    margin-bottom: 20px;
+}
+
+.row > .from-group {
+    width: 50%;
+}
+
+.row > .from-group:first-child {
+    margin-right: 35px;
+    /* У первого элемента не дорисовывать линию на 35px в видео про css 1:29 */
+}
+
+.btn {
+    color: #0f141e;
+    padding: 15px 20px;
+    /* background: #ffa500; */
+    background: #ccc;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+/* Position - как это работает 1:34*/ 
+
+.position {
+    position: relative;
+    border: 4px solid  #a9cecf ;
+    margin-top: 40px;
+    padding: 20px;
+    height: 300px;
+
+}
+
+/* .box {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    left: 10px;
+    bottom: 0px;
+    bottom: 150px;
+    width: 50px;
+    height: 50px;
+    background: lightseagreen;
+    border: 5px solid lightcoral;
+} */
+
+.box {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    border-radius: 50% ; 
+    width: 50px;
+    height: 50px;
+    background: lightseagreen;
+    background-image: url(Img/огонь\ для\ маркеров-01.png);
+}
+/* .marker {
+    text-emphasis: none;
+    color: #115071;
+} */
+
+
+.contener details { 
+    cursor: auto;
+    color: #115071;
+}
+
+.contener summary {
+    position: relative;
+    /* width: 50%; */
+    /* padding-left: 1vw; */
+    padding: 15px 20px;
+    font-size: 1.7vw;
+    line-height: 2.6vw;
+    /* text-transform: uppercase; все заглавные буквы */ 
+    background-color: #fff9dc;
+    /* font-family: 'Geometria', 'icomoon' !important; */
+    box-shadow: 0 4px 7px -5px #046683e3, 0 4px 7px -5px #046683e3;
+    /* border: #046683 solid 1px; */
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+
+.progress {
+    display: flex;
+    height: 1rem;
+    overflow: hidden;
+    font-size: .75rem;
+    background-color: #D9D9D9;
+    border-radius: 0.75rem;
+    margin-bottom: 20px;
+    
+
+}
+
+.bg-warning {
+   background-color: #ffc107 !important; 
+}
+
+.progress-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    background-color: #007bff;
+    transition: width .6s ease;
+    border-radius: 0.75rem;
+
+}
+
+
+.programs-ai-img {
+        width: 45px;
+        height: 45px;
+        display: flex;
+        /* box-shadow: 0 4px 7px -5px #046683e3, 0 4px 7px -5px #046683e3; */
+        margin-bottom: 20px;
+        border-radius: ;
+
+}
+
+.programs-ai {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    /* flex: 0 0 33.333333%;
+    max-width: 33.333333%; */
+    flex: 0 0 auto;
+    position: relative;
+    width: 50%
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+.column {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    box-sizing: border-box;
+    max-width: 100%;
+    
+
+}
+
+
+/* .col-lg-4 {
+    display: flex;
+    align-items: flex-start;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%; */
+    /* padding-right: 15px;
+    padding-left: 15px;
+    text-align: center;
+    display: table-row-group;
+
+} */
+
+
+
+
+
+/* Делает круг двигающиеся вместе со страницей */
+
+/* .box {
+    position: fixed;
+    top: 0;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    background: #f0ffff; */
+}
+/* Верхняя плашка для поисковой системы и т.д как на Behance В видео про CSS 1:41 */
+

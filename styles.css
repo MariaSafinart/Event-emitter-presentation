@@ -199,10 +199,6 @@ a:active {
     color: #115071;
 }
 
-
-
-
-
 .link-list {
     list-style-image: url(Img/огонь\ для\ маркеров-01.png);
     list-style-position: outside;
@@ -402,10 +398,66 @@ a:active {
     margin-left: -15px;
     box-sizing: border-box;
     max-width: 100%;
-    
-
 }
 
+.block {
+  background-color: #F7F7F7;
+  /* width: 95%; */
+  /* padding: 20px; */
+  padding: 20px 0px 20px 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: left;
+  align-items: center;
+}
+
+.icon:nth-child(3) {
+    margin-left: 30px;
+}
+
+/* .icon.space {
+    margin-left: 30px;
+} */
+
+/* .language {
+      background-color: #F7F7F7;
+  width: 95%;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: left;
+  align-items: center;
+
+} */
+
+.icon {
+  /* border-radius: 2rem; */
+  width: 48px;
+  height: 48px;
+  /* background-color: #ffc107; */
+  /* margin-left: 30px; */
+}
+
+.icon:nth-child(2) {
+    margin-left: 20px;
+}
+
+.progressbar {
+  flex: 1;
+  margin-left: 10px;
+  border-radius: 0.75rem;
+  height: 20px;
+  background-color: #D9D9D9;
+}
+
+.progressbar .progress {
+  border-radius: 0.75rem;
+  width: 75%;
+  height: 20px;
+  background-color: #ffc107;
+}
 
 /* .col-lg-4 {
     display: flex;

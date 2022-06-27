@@ -1,0 +1,29 @@
+<svg id="Соц_сети" data-name="Соц сети" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #115071;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: #f7f7f7;
+      }
+
+      .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-3 {
+        stroke: #115071;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g>
+    <circle class="cls-1" cx="12" cy="12" r="12"/>
+    <path class="cls-2" d="M18.56,14.91V8.24l-11-2.43V17.19Zm.33.65a.47.47,0,0,0,.37-.46v-7a.47.47,0,0,0-.36-.46L7.41,5.06a.46.46,0,0,0-.57.45v12a.47.47,0,0,0,.57.46Z"/>
+    <path class="cls-3" d="M4.74,7.88a.47.47,0,0,1,.37-.46L16.59,5.05a.47.47,0,0,1,.57.46v12a.47.47,0,0,1-.57.46L5.1,15.39a.47.47,0,0,1-.36-.46Z"/>
+    <path class="cls-4" d="M7.55,5.64V17.36H6.84V5.64Z"/>
+  </g>
+</svg>

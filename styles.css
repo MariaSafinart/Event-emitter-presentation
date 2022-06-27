@@ -31,7 +31,7 @@ a:hover{
 }
 
 a:active {
-    color: hotpink;
+    color: #EA8D07;
 }
 
 /* a:visited {
@@ -207,7 +207,7 @@ a:active {
 .link-list li {
     margin-bottom: 10px;
     padding-bottom: 5px;
-    border-bottom: 1px solid #ccc;
+    /* border-bottom: 1px solid #ccc; подчёркивание соцсетей*/ 
 }
 
 .contact h2{
@@ -440,6 +440,14 @@ a:active {
   /* margin-left: 30px; */
 }
 
+.icon_social {
+  /* border-radius: 2rem; */
+  width: 24px;
+  height: 24px;
+  /* background-color: #ffc107; */
+  /* margin-left: 30px; */
+}
+
 .icon:nth-child(2) {
     margin-left: 20px;
 }
@@ -487,4 +495,105 @@ a:active {
     background: #f0ffff; */
 }
 /* Верхняя плашка для поисковой системы и т.д как на Behance В видео про CSS 1:41 */
+
+.UserInfo-socialLinks-sRH {
+  display: inline-block;
+  margin-bottom: -10px;
+}
+.App-app-AxT * {
+  box-sizing: border-box;
+}
+ul, ol, dl {
+  margin: 0;
+    margin-bottom: 0px;
+  padding: 0;
+}
+
+ol, ul, li {
+  list-style: none;
+}
+
+.UserInfo-socialLinkContainer-Rae {
+  display: inline-block;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+/* Расположение элеметов в строчку */
+
+.App-app-AxT * {
+  box-sizing: border-box;
+}
+.SocialLink-circleBtn-s9N {
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: #FDFDD9;
+  /* box-shadow: 0 4px 7px -5px #046683e3, 0 4px 7px -5px #046683e3; */
+    /* border: #046683 solid 1px; */
+  border-radius: 8px;
+  border: 1px solid #e8e8e8;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: flex;
+  height: 36px;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 6px;
+  -webkit-transition: background-color .2s;
+  transition: background-color .2s;
+  width: 36px;
+}
+/* .SocialLink-circleIconWrapper-AVZ {
+  height: 30px;
+  width: 30px;
+} */
+
+.SocialLink-circleIcon-yjg {
+  height: 100%;
+  width: 100%;
+}
+
+/* .Profile-root-_4h {
+  color: #b31919;
+} */
+
+.data-tooltip
+ {
+     position: relative;
+     /* Относительное позиционирование */
+ }
+
+.data-tooltip::after {
+        content: attr(data-tooltip);
+        /* Выводим текст */
+        position: absolute;
+        /* Абсолютное позиционирование */
+        width: 300px;
+        /* Ширина подсказки */
+        left: 0;
+        top: 0;
+        /* Положение подсказки */
+        background: #3989c9;
+        /* Синий цвет фона */
+        color: #fff;
+        /* Цвет текста */
+        padding: 0.5em;
+        /* Поля вокруг текста */
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        /* Параметры тени */
+        pointer-events: none;
+        /* Подсказка */
+        opacity: 0;
+        /* Подсказка невидима */
+        transition: 1s;
+        /* Время появления подсказки */
+    }
+
+ .data-tooltip:hover::after   {
+      opacity: 1;
+      /* Показываем подсказку */
+      top: 2em;
+      /* Положение подсказки */
+  }
+
+
 

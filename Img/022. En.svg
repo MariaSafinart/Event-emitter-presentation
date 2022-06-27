@@ -1,0 +1,22 @@
+<svg id="Языки" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #115071;
+      }
+
+      .cls-2 {
+        font-size: 15.78px;
+        fill: #f7f7f7;
+        font-family: Roboto-Regular, Roboto;
+      }
+    </style>
+  </defs>
+  <g id="Adobe_Illustrator" data-name="Adobe Illustrator">
+    <circle class="cls-1" cx="12" cy="12" r="12"/>
+  </g>
+  <g id="Adobe_Illustrator-2" data-name="Adobe Illustrator">
+    <circle class="cls-1" cx="12" cy="12" r="12"/>
+    <text class="cls-2" transform="translate(3.27 17.05)">En</text>
+  </g>
+</svg>
